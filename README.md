@@ -1,24 +1,10 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+##アプリの概要
+私は個人経営の居酒屋さんが大好きで、よく飲みに行きます。  
+常連として通っていたお店が、経営難で閉店していくのも多々見てきました。
+大好きなお店がなくならない様に、経営者の方々が少しでも余裕を持って営業できる様に  
+このアプリでは、店舗の定休日や営業時間外の時間に貸しスペースとして開放し、副収入を  
+得ていただくと同時に、利用された方へのお店の宣伝となる様、作成した予約アプリです。
 
-Things you may want to cover:
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
