@@ -55,3 +55,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'haml-rails'
 gem 'devise'
 gem 'font-awesome-rails'
+gem 'momentjs-rails', '>= 2.9.0'
+gem 'fullcalendar-rails'
+gem 'kaminari', '~> 0.17.0'
