@@ -1,6 +1,7 @@
 .shop_main
   .header
-    .header__title
+    %h1.header__title S
+    -# =link_to root_path, class:'title', method: :get do
 
   .main
     .pickup
@@ -12,3 +13,5 @@
       .pickup__image
         =render partial: "shared/shop-box"
   .footer
+    .footer__content
+      =link_to '---search-space---', 'root_path'
