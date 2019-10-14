@@ -3,4 +3,10 @@ Rails.application.routes.draw do
 
   root 'shops#index'
 
+  resources :mypage, only: [:index] do
+    member do
+    get :logout
+    end
+  end
+
 end
