@@ -18,6 +18,5 @@ class ShopsController < ApplicationController
   def destroy
   end
 
-  def 
 
 end
