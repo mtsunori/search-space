@@ -1,0 +1,69 @@
+.wrapper
+= render partial:"shared/header"
+.container
+  .detail
+    %h2.detail__head= '@item.name'
+    .detail__box
+      .detail__box__item
+        .detail__box__item__image--large
+          = image_tag "#{@images.first.image}", alt: '商品画像'
+        // business_statusが2(購入済)の時、SOLDを表示する
+        - if @item.business_status == "sale"
+          .triangle_box
+            .triangle_box__sold_triangle
+              .triangle_box__sold_triangle__text SOLD
+        .detail__box__item__image--small
+          -# - @images.each do |image|
+          -#   = image_tag "#{image.image}", alt: '商品画像'
+      %table.detail__box__item
+        %tbody.detail__box__item__table
+          %tr
+            %th 出品者
+            %td
+              = link_to @item.user.nickname, '#'
+              .review
+                .review__image
+                  = image_tag("")
+                  = fa_icon "smile-o"
+                %span.review__number 5
+                .review__image
+                  = image_tag("")
+                  = fa_icon "meh-o"
+                %span.review__number 2
+                .review__image
+                  = image_tag("")
+                  = fa_icon "frown-o"
+                %span.review__number 1
+                -# TODO レビュー数表示
+          %tr
+            %th カテゴリー
+            %td 
+              = link_to '#' do
+                %span= @item.category.parent.parent.name
+              = link_to '#' do
+                %i.fa.fa-chevron-right
+                %span= @item.category.parent.name
+              = link_to '#' do
+                %i.fa.fa-chevron-right
+                %span= @item.category.name
+          %tr
+            %th ブランド
+            %td=  @item.brand&.name
+          %tr
+            %th 商品のサイズ
+            %td=  @item&.size
+          %tr
+            %th 商品の状態
+            %td= '@item.state_i18n'
+          %tr
+            %th 配送料の負担
+            %td= '@item.postage_i18n'
+          %tr
+            %th 配送の方法
+            %td= '@item.shipping_method_i18n'
+          %tr
+            %th 発送元地域
+            %td='@item.prefecture.name'
+          %tr
+            %th 発送日の目安
+            %td= '@item.shipping_date_i18n'

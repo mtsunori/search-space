@@ -3,6 +3,8 @@ Rails.application.routes.draw do
 
   root 'shops#index'
 
+  resources :shop, only: [:index, :show]
+
   resources :mypage, only: [:index] do
     member do
     get :logout
