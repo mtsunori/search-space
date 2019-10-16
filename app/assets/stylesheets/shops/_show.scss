@@ -1,0 +1,163 @@
+.container {
+  width: 700px;
+  margin: 0 auto;
+  padding: 40px 0;
+}
+.detail {
+  width: 100%;
+  margin: 0 auto 8px;
+  padding: 24px 40px 40px;
+  background-color: white;
+
+  &__head {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    word-wrap: break-word;
+    line-height: 1.4;
+  }
+
+  &__box {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 16px;
+
+    &__item {
+      width: 300px;
+      background-color: #fafafa;
+      position: relative;
+
+      &__image--large {
+        width: 300px;
+        height: 300px;
+
+        img {
+          width: 300px;
+          height: 300px;
+          display: none;
+          width: 100%;
+          object-fit: fill;
+
+          &:first-of-type {
+            display: block;
+          }
+        }
+      }
+
+      .triangle_box { //SOLDの三角形
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        &__sold_triangle {
+          @include triangle;
+          border-width: 120px 120px 0 0;
+  
+          &__text {
+            top: 24px;
+            font-size: 28px;
+            @include triangle_text;
+          }
+        }
+      }
+
+      &__image--small {
+        display: flex;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        width: 100%;
+
+        img {
+          width: 60px;
+          height: 60px;
+          object-fit: cover;
+          opacity: 0.4;
+          cursor: pointer;
+
+        }
+      }
+      &__table {
+        padding-right: 10px;
+        width: 100%;
+        border: 1px solid #f5f5f5;
+
+        tr {
+          width: 100%;
+
+            th {
+              width: 39%;
+              padding: 8px;
+              border: 1px solid #f5f5f5;
+              background-color: #fafafa;
+              font-size: 14px;
+              line-height: 1;
+              white-space: nowrap;
+            }
+
+            td {
+              width: 61%;
+              padding: 8px;
+              border: 1px solid #f5f5f5;
+              background-color: white;
+              font-size: 14px;
+              line-height: 1;
+
+              a {
+                display: block;
+                color: #5d9dc9;
+                font-size: 14px;
+                line-height: 1;
+                @include hover;
+
+                i {
+                  font-size: 14px;
+                  line-height: 1;
+                }
+
+                span {
+                  font-size: 14px;
+                  line-height: 1;
+                }
+              }
+
+              .review {
+                margin-top: 9px;
+                font-size: 0;
+                display: flex;
+                justify-content: space-between;
+
+                &__image {
+                  color: #fba933;
+                  font-size: 16px;
+                  line-height: 1;
+                  vertical-align: middle;
+                  font-weight: bold;
+                  display: inline-block;
+
+                  &:first-of-type {
+                    color: #ef5185;
+                    display: inline-block;
+                  }
+
+                  &:last-of-type {
+                    color: #6ab5d8;
+                    display: inline-block;
+                  }
+                }
+
+                &__number {
+                  margin: 0 16px 0 4px;
+                  color: black;
+                  font-size: 14px;
+                  line-height: 1;
+                  vertical-align: middle;
+                  display: inline-block;
+                }
+              }
+          }
+        }
+      }
+    }
+  }
+}
