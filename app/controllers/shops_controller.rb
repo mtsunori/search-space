@@ -4,7 +4,8 @@ class ShopsController < ApplicationController
   end
 
   def show
-    
+    @shop = Shop.find(params[:id])
+    @image= @item.images
   end
   
   def edit
@@ -16,6 +17,14 @@ class ShopsController < ApplicationController
 
 
   def destroy
+  end
+
+  private
+
+  def shop_params
+    params.require(:shop).permit(
+
+    )
   end
 
 
