@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   root 'shops#index'
 
-  resources :shop, only: [:index, :show]
+  resources :shops, only: [:index, :show, :new, :create, :edit, :update]
 
   resources :mypage, only: [:index] do
     member do
