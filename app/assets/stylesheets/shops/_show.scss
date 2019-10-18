@@ -45,22 +45,22 @@
         }
       }
 
-      .triangle_box { //SOLDの三角形
-        position: absolute;
-        top: 0;
-        left: 0;
+      // .triangle_box { //SOLDの三角形
+      //   position: absolute;
+      //   top: 0;
+      //   left: 0;
 
-        &__sold_triangle {
-          @include triangle;
-          border-width: 120px 120px 0 0;
+      //   &__sold_triangle {
+      //     @include triangle;
+      //     border-width: 120px 120px 0 0;
   
-          &__text {
-            top: 24px;
-            font-size: 28px;
-            @include triangle_text;
-          }
-        }
-      }
+      //     &__text {
+      //       top: 24px;
+      //       font-size: 28px;
+      //       @include triangle_text;
+      //     }
+      //   }
+      // }
 
       &__image--small {
         display: flex;
@@ -108,7 +108,7 @@
                 color: #5d9dc9;
                 font-size: 14px;
                 line-height: 1;
-                @include hover;
+                // @include hover;
 
                 i {
                   font-size: 14px;
