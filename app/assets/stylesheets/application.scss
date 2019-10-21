@@ -3,6 +3,9 @@
 @import "config/mixin";
 @import "config/variable";
 
+//user
+@import "modules/user";
+
 //shop
 @import "shops/index";
 @import "shops/shop-box";
