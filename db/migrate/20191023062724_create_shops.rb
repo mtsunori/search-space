@@ -12,6 +12,7 @@ class CreateShops < ActiveRecord::Migration[5.0]
       t.integer    :borrower_id, to_table: :users
       t.string     :lending_time, null: false
       t.string     :business_hour
+      t.string     :phone_number, null: false
 
       t.timestamps
     end

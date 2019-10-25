@@ -32,6 +32,7 @@ ActiveRecord::Schema.define(version: 20191023083856) do
     t.integer  "borrower_id"
     t.string   "lending_time",                              null: false
     t.string   "business_hour"
+    t.string   "phone_number",                              null: false
     t.datetime "created_at",                                null: false
     t.datetime "updated_at",                                null: false
     t.index ["name"], name: "index_shops_on_name", using: :btree
