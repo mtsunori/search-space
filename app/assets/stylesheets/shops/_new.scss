@@ -94,6 +94,135 @@
               }
           }
         }
+
+        // 商品名と商品の説明
+                .sell-content {
+                  border-bottom: $BorderBottom;
+                  padding: $ItemFormPadding;
+        
+                  .input-name {
+                    @include input-field;
+                  }
+        
+                  .input-explanation {
+                    width: 100%;
+                    min-height: 104px;
+                    margin-top: 8px;
+                    padding: 10px;
+                    border: $BoderGray;
+                    font-size: 16px;
+                    line-height: 1.5;
+                  }
+        
+                  //ブランド
+                  #brand {
+                    position: relative;
+        
+                    // ブランド名の入力フォーム
+                    .input-brand {
+                      @include input-field;
+                    }
+        
+                    // インクリメンタルサーチの結果
+                    #search_brand_result {
+                      overflow: auto;
+                      position: absolute;
+                      background-color: white;
+                      width: 100%;
+                      max-height: 280px;
+                      font-size: 14px;
+                      z-index: 10;
+                      box-shadow: (0 0 4px 0 black);
+        
+                      .brand_list {
+                        padding: 16px 8px;
+                      }
+                    }
+                  }
+        
+                  #size { //最初は隠しておく
+                    display: none;
+                    // visibility: hidden;
+                  }
+        
+                // 販売価格
+                  //価格
+                  .price-form{
+                    padding-bottom: 24px;
+        
+                    .price-left {
+                      float: left;
+                      width: 50%;
+                      line-height: 48px;
+                    }
+                    .price-right {
+                      display: flex;
+                      justify-content: flex-end;
+                      width: 50%;
+                      align-items: center;
+                      padding-left: 24px;
+        
+                      .input-price {
+                        @include input-field;
+                        width: 100%;
+                        height: 48px;
+                        padding: 10px 16px 8px;
+                        font-size: 16px;
+                        float: right;
+                        margin-left: 8px;
+                        text-align: right;
+                      }
+                    }
+                  }
+        
+                  //販売手数料
+                  .fee-form {
+                    padding: 24px 0;
+                    border-top: $BoderGray;
+                    border-bottom: $BoderGray;
+                    @include flexbox-edge;
+                  }
+        
+                  //販売利益
+                  .profit-form {
+                    padding: 24px 0;
+                    font-weight: bold;
+                    font-size: 16px;
+                    @include flexbox-edge;
+                  }
+        
+                //出品ボタン
+                  //注意書き
+                  .warning-box {
+                    line-height: 22px;
+                  }
+        
+                  //出品ボタン
+                  .red-btn {
+                    width: 100%;
+                    background-color:$RedColor;
+                    color: white;
+                    margin-top: 40px;
+                    line-height: 48px;
+                    text-align: center;
+                    font-size: 14px;
+                    border-style: none;
+                  }
+        
+                  //もどるボタン
+                  .back-btn {
+                    width: 45%;
+                    margin: 24px auto 0;
+        
+                    .btn-gray {
+                      background-color: #AAAAAA;
+                      color: white;
+                      line-height: 48px;
+                      display: block;
+                      text-align: center;
+                    }
+                  }
+                }
       }
     }
   }
