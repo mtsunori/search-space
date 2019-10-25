@@ -1,0 +1,11 @@
+@mixin text-require-position() {
+  display: flex;
+  align-items: flex-end;
+}
+
+@mixin pos-trans-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%)translateY(-50%);
+}

@@ -1,0 +1,18 @@
+.shop-main
+  %main.main
+    %section.main__shop-box
+      %h2.main__shop-box__head 店舗の情報を入力
+      = form_for @shop, html: {class: "sell-form dropzone", id: "shop-dropzone"} do |f|
+        .sell-upload-box
+          %h3.sell-upload-head
+            .image-text 店舗画像
+            %span.form-requires 必須
+          %p.picture-limit 最大5枚までアップロードできます
+          = f.fields_for :images do |i|
+            .dropzone-container.clearfix
+              .preview#preview
+              .dropzone-area
+                = i.label :image, class: "dropzone-box", for: "upload-image", style: "margin: 0" do
+                  .input_area
+                    = i.file_field :image, multiple: true, name: 'images[image][]',id: "upload-image", class: 'upload-image', 'data-image': 0
+                  %pre.image-drop-text ドラッグアンドドロップ<br>またはクリックしてファイルをアップロード
