@@ -20,12 +20,12 @@
       }
 
       //出品画像
-      .sell-upload-box {
+      .lend-upload-box {
         min-height: 303px;
         padding: $ShopFormPadding;
         border-bottom: $BorderBottom;
 
-          .sell-upload-head {
+          .lend-upload-head {
             @include text-require-position;
 
             .image-text {
@@ -82,7 +82,6 @@
                   .image-drop-text, .fa.fa-camera {
                     text-align: center;
                     @include pos-trans-center;
-                    // display: block;
                     position: absolute;
                     line-height: 1.5;
                     font-size: 14px;
@@ -96,7 +95,7 @@
         }
 
         // 商品名と商品の説明
-                .sell-content {
+                .lend-content {
                   border-bottom: $BorderBottom;
                   padding: $ItemFormPadding;
         
