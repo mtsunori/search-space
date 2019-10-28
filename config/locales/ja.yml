@@ -1,0 +1,10 @@
+ja:
+  enums:
+    shop:
+      capacity:
+      event_status:
+      lending_time_start:
+      lending_time_end:
+      business_hour_start:
+      business_hour_end:
+      
