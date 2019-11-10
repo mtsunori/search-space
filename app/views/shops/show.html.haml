@@ -1,25 +1,25 @@
 .wrapper
 .container
   .detail
-    %h2.detail__head= '@item.name'
+    %h2.detail__head= '@shop.name'
     .detail__box
-      .detail__box__item
-        .detail__box__item__image--large
+      .detail__box__shop
+        .detail__box__shop__image--large
           -# = image_tag "#{@images.first.image}", alt: '商品画像'
         // business_statusが2(購入済)の時、SOLDを表示する
-        -# - if @item.business_status == "sale"
+        -# - if @shop.business_status == "sale"
         -#   .triangle_box
         -#     .triangle_box__sold_triangle
         -#       .triangle_box__sold_triangle__text SOLD
-        .detail__box__item__image--small
+        .detail__box__shop__image--small
           -# - @images.each do |image|
           -#   = image_tag "#{image.image}", alt: '商品画像'
-      %table.detail__box__item
-        %tbody.detail__box__item__table
+      %table.detail__box__shop
+        %tbody.detail__box__shop__table
           %tr
             %th 出品者
             %td
-              = link_to @item.user.nickname, '#'
+              -# = link_to @shop.user.nickname, '#'
               .review
                 .review__image
                   = image_tag("")
@@ -38,32 +38,32 @@
             %th カテゴリー
             %td 
               = link_to '#' do
-                %span= "@item.category.parent.parent.name"
+                %span= "@shop.category.parent.parent.name"
               = link_to '#' do
                 %i.fa.fa-chevron-right
-                %span= "@item.category.parent.name"
+                %span= "@shop.category.parent.name"
               = link_to '#' do
                 %i.fa.fa-chevron-right
-                %span= "@item.category.name"
+                %span= "@shop.category.name"
           %tr
             %th ブランド
-            %td=  "@item.brand&.name"
+            %td=  "@shop.brand&.name"
           %tr
             %th 商品のサイズ
-            %td=  "@item&.size"
+            %td=  "@shop&.size"
           %tr
             %th 商品の状態
-            %td= '@item.state_i18n'
+            %td= '@shop.state_i18n'
           %tr
             %th 配送料の負担
-            %td= '@item.postage_i18n'
+            %td= '@shop.postage_i18n'
           %tr
             %th 配送の方法
-            %td= '@item.shipping_method_i18n'
+            %td= '@shop.shipping_method_i18n'
           %tr
             %th 発送元地域
-            %td='@item.prefecture.name'
+            %td='@shop.prefecture.name'
           %tr
             %th 発送日の目安
-            %td= '@item.shipping_date_i18n'
+            %td= '@shop.shipping_date_i18n'
   #calendar
