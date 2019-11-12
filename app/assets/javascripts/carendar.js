@@ -42,7 +42,7 @@ $(document).ready(function() {
     header: {
       left: 'prev,next today',
       center: 'title',
-      right: 'month,agendaWeek,agendaDay'
+      right: 'month'
     },
     axisFormat: 'H:mm',
     timeFormat: 'H:mm',
@@ -67,7 +67,7 @@ $(document).ready(function() {
       day:      '日'
     },
     height: 800,                           // 高さ
-    defaultView: 'agendaWeek',             // 初期表示ビュー
+    defaultView: 'month',             // 初期表示ビュー
     eventLimit: true,                      // allow "more" link when too many events
     firstDay: 0,                           // 最初の曜日, 0:日曜日
     weekends: true,                        // 土曜、日曜を表示
@@ -80,8 +80,8 @@ $(document).ready(function() {
     defaultTimedEventDuration: '10:00:00', // 画面上に表示する初めの時間(スクロールされている場所)
     allDaySlot: false,                     // 終日スロットを非表示
     allDayText:'allday',                   // 終日スロットのタイトル
-    slotMinutes: 15,                       // スロットの分
-    snapMinutes: 15,                       // 選択する時間間隔
+    slotMinutes: 30,                       // スロットの分
+    snapMinutes: 30,                       // 選択する時間間隔
     firstHour: 9,                          // スクロール開始時間
     eventClick: function(event) { //イベントをクリックしたときに実行
       var id = event.id
