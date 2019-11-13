@@ -17,53 +17,22 @@
       %table.detail__box__shop
         %tbody.detail__box__shop__table
           %tr
-            %th 出品者
-            %td
-              -# = link_to @shop.user.nickname, '#'
-              .review
-                .review__image
-                  = image_tag("")
-                  = fa_icon "smile-o"
-                %span.review__number 5
-                .review__image
-                  = image_tag("")
-                  = fa_icon "meh-o"
-                %span.review__number 2
-                .review__image
-                  = image_tag("")
-                  = fa_icon "frown-o"
-                %span.review__number 1
-                -# TODO レビュー数表示
+            %th 座席数
+            %td= '@shop.capacity_i18n'
           %tr
-            %th カテゴリー
-            %td 
-              = link_to '#' do
-                %span= "@shop.category.parent.parent.name"
-              = link_to '#' do
-                %i.fa.fa-chevron-right
-                %span= "@shop.category.parent.name"
-              = link_to '#' do
-                %i.fa.fa-chevron-right
-                %span= "@shop.category.name"
+            %th 住所
+            %td= '@shop.address'+'@shop.house_number' 
           %tr
-            %th ブランド
-            %td=  "@shop.brand&.name"
+            %th 建物名・部屋番号
+            %td=  "@shop&.building_name"+"@shop&.room_number"
           %tr
-            %th 商品のサイズ
-            %td=  "@shop&.size"
+            %th 貸し出し時間
+            %td=  "@shop.lending_time_start""@shop.lending_time_end"
           %tr
-            %th 商品の状態
-            %td= '@shop.state_i18n'
+            %th 店舗営業時間
+            %td= '@shop.business_hour_start'"@shop.business_hour_end"
           %tr
-            %th 配送料の負担
-            %td= '@shop.postage_i18n'
-          %tr
-            %th 配送の方法
-            %td= '@shop.shipping_method_i18n'
-          %tr
-            %th 発送元地域
-            %td='@shop.prefecture.name'
-          %tr
-            %th 発送日の目安
-            %td= '@shop.shipping_date_i18n'
+            %th 店舗説明
+            %td= '@shop.explanation'
+
   #calendar

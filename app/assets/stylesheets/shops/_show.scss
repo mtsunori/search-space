@@ -127,24 +127,24 @@
                 display: flex;
                 justify-content: space-between;
 
-                &__image {
-                  color: #fba933;
-                  font-size: 16px;
-                  line-height: 1;
-                  vertical-align: middle;
-                  font-weight: bold;
-                  display: inline-block;
+                // &__image {
+                //   color: #fba933;
+                //   font-size: 16px;
+                //   line-height: 1;
+                //   vertical-align: middle;
+                //   font-weight: bold;
+                //   display: inline-block;
 
-                  &:first-of-type {
-                    color: #ef5185;
-                    display: inline-block;
-                  }
+                //   &:first-of-type {
+                //     color: #ef5185;
+                //     display: inline-block;
+                //   }
 
-                  &:last-of-type {
-                    color: #6ab5d8;
-                    display: inline-block;
-                  }
-                }
+                //   &:last-of-type {
+                //     color: #6ab5d8;
+                //     display: inline-block;
+                //   }
+                // }
 
                 &__number {
                   margin: 0 16px 0 4px;
