@@ -2,7 +2,14 @@ ja:
   enums:
     shop:
       capacity:
+        five_se: ５座席以下
+        ten_se: ５〜１０席
+        fifteen_se: １０〜１５席
+        twenty_se: １５〜２０席
+        twenty_five_se: ２５席以上
       event_status:
+        lend: 予約可
+        reserved: 予約あり
       lending_time_start:
       lending_time_end:
       business_hour_start:
