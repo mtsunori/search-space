@@ -1,7 +1,7 @@
 .wrapper
 .container
   .detail
-    %h2.detail__head= '@shop.name'
+    %h2.detail__head= @shop.name
     .detail__box
       .detail__box__shop
         .detail__box__shop__image--large
@@ -18,21 +18,28 @@
         %tbody.detail__box__shop__table
           %tr
             %th 座席数
-            %td= '@shop.capacity_i18n'
+            %td= @shop.capacity_i18n
           %tr
             %th 住所
-            %td= '@shop.address'+'@shop.house_number' 
+            %td= "#{@shop.address+@shop.house_number}" 
           %tr
             %th 建物名・部屋番号
-            %td=  "@shop&.building_name"+"@shop&.room_number"
+            %td=  "#{@shop&.building_name+@shop&.room_number}"
           %tr
             %th 貸し出し時間
-            %td=  "@shop.lending_time_start""@shop.lending_time_end"
+            %td= @shop.lending_time_start
+          %tr
+            %th 貸し出し金額
+            %td=  @shop.price
           %tr
             %th 店舗営業時間
-            %td= '@shop.business_hour_start'"@shop.business_hour_end"
+            %td= @shop.business_hour_start.to_s
+          %tr
+            %th TEL
+            %td= @shop.phone_number
+          
           %tr
             %th 店舗説明
-            %td= '@shop.explanation'
+            %td= @shop.explanation
 
   #calendar
