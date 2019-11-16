@@ -10,12 +10,11 @@ class CreateShops < ActiveRecord::Migration[5.0]
       t.string     :house_number, null: false
       t.string     :building_name
       t.string     :room_number
-      t.string     :event_status, null: false, default: 0
       t.integer    :borrower_id, to_table: :users
-      t.string     :lending_time_start, null: false
-      t.string     :lending_time_end, null: false
-      t.string     :business_hour_start
-      t.string     :business_hour_end
+      t.time       :lending_time_start, null: false
+      t.time       :lending_time_end, null: false
+      t.time       :business_hour_start
+      t.time       :business_hour_end
       t.string     :phone_number, null: false
 
       t.timestamps

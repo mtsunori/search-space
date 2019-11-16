@@ -18,8 +18,12 @@ ActiveRecord::Schema.define(version: 20191028150048) do
     t.datetime "end"
     t.string   "color"
     t.boolean  "allday"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "shop_id",                    null: false
+    t.integer  "borrower_id"
+    t.string   "event_status", default: "0", null: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+    t.index ["shop_id"], name: "index_events_on_shop_id", using: :btree
   end
 
   create_table "images", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -42,10 +46,10 @@ ActiveRecord::Schema.define(version: 20191028150048) do
     t.string   "room_number"
     t.string   "event_status",                      default: "0", null: false
     t.integer  "borrower_id"
-    t.string   "lending_time_start",                              null: false
-    t.string   "lending_time_end",                                null: false
-    t.string   "business_hour_start"
-    t.string   "business_hour_end"
+    t.time     "lending_time_start",                              null: false
+    t.time     "lending_time_end",                                null: false
+    t.time     "business_hour_start"
+    t.time     "business_hour_end"
     t.string   "phone_number",                                    null: false
     t.datetime "created_at",                                      null: false
     t.datetime "updated_at",                                      null: false
@@ -67,6 +71,7 @@ ActiveRecord::Schema.define(version: 20191028150048) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
+  add_foreign_key "events", "shops"
   add_foreign_key "images", "shops"
   add_foreign_key "shops", "users"
 end
