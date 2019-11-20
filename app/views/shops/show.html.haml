@@ -23,17 +23,20 @@
             %th 住所
             %td= "#{@shop.address+@shop.house_number}" 
           %tr
-            %th 建物名・部屋番号
-            %td=  "#{@shop&.building_name+@shop&.room_number}"
+            %th 建物名
+            %td=  @shop&.building_name
+          %tr
+            %th 部屋番号
+            %td=  @shop&.room_number
           %tr
             %th 貸し出し時間
-            %td= "#{@shop.lending_time_start}"
+            %td= "#{@shop.lending_time_start} - #{@shop.lending_time_end}"
           %tr
             %th 貸し出し金額
-            %td=  @shop.price
+            %td=  "¥ #{number_with_delimiter(@shop.price)}"
           %tr
             %th 店舗営業時間
-            %td= @shop.business_hour_start.to_s
+            %td= "#{@shop.business_hour_start} - #{@shop.business_hour_end}"
           %tr
             %th TEL
             %td= @shop.phone_number
