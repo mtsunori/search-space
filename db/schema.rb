@@ -35,24 +35,23 @@ ActiveRecord::Schema.define(version: 20191028150048) do
   end
 
   create_table "shops", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "name",                                            null: false
-    t.integer  "price",                                           null: false
-    t.text     "explanation",         limit: 65535,               null: false
-    t.integer  "capacity",                                        null: false
-    t.integer  "user_id",                                         null: false
-    t.text     "address",             limit: 65535,               null: false
-    t.string   "house_number",                                    null: false
+    t.string   "name",                              null: false
+    t.integer  "price",                             null: false
+    t.text     "explanation",         limit: 65535, null: false
+    t.integer  "capacity",                          null: false
+    t.integer  "user_id",                           null: false
+    t.text     "address",             limit: 65535, null: false
+    t.string   "house_number",                      null: false
     t.string   "building_name"
     t.string   "room_number"
-    t.string   "event_status",                      default: "0", null: false
     t.integer  "borrower_id"
-    t.time     "lending_time_start",                              null: false
-    t.time     "lending_time_end",                                null: false
-    t.time     "business_hour_start"
-    t.time     "business_hour_end"
-    t.string   "phone_number",                                    null: false
-    t.datetime "created_at",                                      null: false
-    t.datetime "updated_at",                                      null: false
+    t.string   "lending_time_start",                null: false
+    t.string   "lending_time_end",                  null: false
+    t.string   "business_hour_start"
+    t.string   "business_hour_end"
+    t.string   "phone_number",                      null: false
+    t.datetime "created_at",                        null: false
+    t.datetime "updated_at",                        null: false
     t.index ["name"], name: "index_shops_on_name", using: :btree
     t.index ["price"], name: "index_shops_on_price", using: :btree
     t.index ["user_id"], name: "index_shops_on_user_id", using: :btree
