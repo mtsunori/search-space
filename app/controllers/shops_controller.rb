@@ -1,5 +1,7 @@
 class ShopsController < ApplicationController
 
+ 
+
   def index
     # @new_shop = Shop.where(params[:id]).order{"created_st_DESC"}.limit(3)
   end
