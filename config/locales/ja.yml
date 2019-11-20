@@ -7,11 +7,8 @@ ja:
         fifteen_se: １０〜１５席
         twenty_se: １５〜２０席
         twenty_five_se: ２５席以上
-      event_status:
+    event:
+        event_status:
         lend: 予約可
         reserved: 予約あり
-      lending_time_start:
-      lending_time_end:
-      business_hour_start:
-      business_hour_end:
       
