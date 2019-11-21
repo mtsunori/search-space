@@ -25,7 +25,7 @@ $(document).ready(function() {
         title: title,
         start: start_time,
         end: end_time,
-        allday: false
+        allday: false,
       }
     }
     $.ajax({

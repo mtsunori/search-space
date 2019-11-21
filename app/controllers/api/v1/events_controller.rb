@@ -7,9 +7,11 @@ module Api
       protect_from_forgery except: [:create, :update]
 
       def index
+        
         @events = Event.order(:shop_id).limit(params[:limit]).offset(params[:offset])
         json = @events
         render json: json.to_json
+        # binding.pry
       end
 
       def show
@@ -49,6 +51,7 @@ module Api
         # event_params.require(:end)
         # event_params.require(:color)
         # event_params.require(:allday)
+        @shop = Shop.find(params[:id])
         @event = Event.new(event_params)
         respond_to do |format|
           format.any
@@ -77,6 +80,7 @@ module Api
             :allday,
             :shop_id
           )
+          .merge(shop_id: @shop.id)
         end
     end
   end
