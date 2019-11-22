@@ -78,7 +78,6 @@ module Api
             :end,
             :color,
             :allday,
-            :shop_id
           )
           .merge(shop_id: @shop.id)
         end
