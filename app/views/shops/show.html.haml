@@ -46,3 +46,21 @@
             %td= @shop.explanation
 
   #calendar
+  :javascript
+    var calendar = function yesyes(shop_id, day = 0) {$('#calendar').fullCalendar({ 
+      header: {
+        left: 'prev,next today',
+        center: 'title',
+        right: 'month'
+      },
+      events: { //日ごとの情報をイベントとして取得
+
+      url: '/events.json',
+      type: 'GET',
+      data: {
+        shop_id: shop_id,
+        day: day,
+      },
+      },
+    }),
+    };
