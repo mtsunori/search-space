@@ -8,10 +8,9 @@ module Api
 
       def index
         
-        @events = Event.order(:shop_id).limit(params[:limit]).offset(params[:offset])
+        @events = Event.where(params[:shop_id])
         json = @events
         render json: json.to_json
-        # binding.pry
       end
 
       def show
@@ -78,8 +77,9 @@ module Api
             :end,
             :color,
             :allday,
+            :shop
           )
-          .merge(shop_id: @shop.id)
+          # .merge(shop_id: @shop.id)
         end
     end
   end
