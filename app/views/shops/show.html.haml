@@ -47,7 +47,9 @@
 
   #calendar
   :javascript
+  
     var event_ids = #{@events.ids}
+    
     var calendar = $('#calendar').fullCalendar({
       header: {
         left: 'prev,next today',
@@ -55,12 +57,13 @@
         right: 'month'
       },
       events: { //日ごとの情報をイベントとして取得
-
-      url: '/events.json',
+    
+      url: 'shops/show.json',
       type: 'GET',
       data: {
         event_ids: event_ids,
-         
       },
       },
+    eventRender: function (event, element, view) {
+    }
     });
