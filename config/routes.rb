@@ -8,11 +8,8 @@ Rails.application.routes.draw do
 
   resources :shops, only: [:index, :show, :new, :create, :edit, :update]
 
-  namespace :api, { format: 'json' } do
-    namespace :v1 do
-        resources :events
-    end
-  end
+
+  resources :events
 
   resources :mypage, only: [:index] do
     member do
