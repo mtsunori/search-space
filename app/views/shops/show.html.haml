@@ -59,6 +59,7 @@
       axisFormat: 'H:mm',
       timeFormat: 'H:mm',
       monthNames: ['１月','２月','３月','４月','５月','６月','７月','８月','９月','１０月','１１月','１２月'],
+
       events: { //日ごとの情報をイベントとして取得
     
       url: '/events.json',
@@ -67,5 +68,11 @@
         id: event_ids,
       },
       },
-
     });
+
+  .reserve
+  -if @shop.user_id == current_user.id
+    =link_to '予約可能日の作成へ', new_event_path(@shop),class: 'reserve__form'
+  - else
+    %span.reserve__explanation ※予約可の表示のある日付のみご利用いただけます。カレンダーから日にちのクリックでご予約画面へお進みください。
+  
