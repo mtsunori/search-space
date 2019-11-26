@@ -1,7 +1,10 @@
 class EventsController < ApplicationController
   before_action :set_event, only: [:show, :edit, :update, :destroy] 
   def index
-    @events = Event.all
+    # @shop = Shop.find(params[:id])
+    # @events = @shop.events
+    @events = Event.find(params[:id])
+    
   end
 
   def show
@@ -13,6 +16,7 @@ class EventsController < ApplicationController
 
   def create
     @event = Event.new(event_params)
+    
 
     respond_to do |format|
       if @event.save
@@ -40,7 +44,8 @@ class EventsController < ApplicationController
       :start,
       :end,
       :color,
-      :allday
+      :allday,
+      :shop_id
     )
   end
 end
