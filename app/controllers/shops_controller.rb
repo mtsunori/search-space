@@ -11,6 +11,12 @@ class ShopsController < ApplicationController
     @events = @shop.events
     # binding.pry
     # @image= @item.images
+
+    respond_to do |format|
+      format.html # index.html.erb
+      format.xml { render :xml => @events }
+      format.json { render :json => @events }
+    end
   end
 
   def new
