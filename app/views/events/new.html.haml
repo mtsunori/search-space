@@ -1,2 +1,17 @@
-%h1 Events#new
-%p Find me in app/views/events/new.html.haml
+%nav.navbar.navbar-light{style: :"background-color: #e3f2fd;" }
+  %a.navbar-brand 登録済みタスク一覧
+
+= form_for @event, html: {class: 'form-group'} do |f|
+
+
+  = f.label :title
+  = f.text_field :title, class: 'form-control', placeholder: "ここにタスク名を入力してください"
+
+  = f.label :start_at
+  = f.datetime_select :start, ampm: :true, minute_step: 30, class: 'form-control'
+
+  = f.label :finish_at
+  = f.datetime_select :end, ampm: :true, minute_step: 30, class: 'form-control'
+
+  = f.submit '作成する', class: "btn btn-primary"
+
