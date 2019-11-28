@@ -9,8 +9,6 @@ class ShopsController < ApplicationController
   def show
     @shop = Shop.find(params[:id])
     @events = @shop.events
-    # binding.pry
-    # @image= @item.images
 
     respond_to do |format|
       format.html # index.html.erb

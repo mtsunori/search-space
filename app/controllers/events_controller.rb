@@ -1,5 +1,5 @@
 class EventsController < ApplicationController
-  before_action :set_event, only: [:show, :edit, :update, :destroy] 
+  before_action :set_event, only: [:index, :show, :edit, :update, :destroy] 
   def index
     # @shop = Shop.find(params[:id])
     # @events = @shop.events
@@ -8,6 +8,7 @@ class EventsController < ApplicationController
   end
 
   def show
+
   end
 
   def new
