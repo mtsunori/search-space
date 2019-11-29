@@ -1,8 +1,6 @@
 class EventsController < ApplicationController
   before_action :set_event, only: [:index, :show, :edit, :update, :destroy] 
   def index
-    # @shop = Shop.find(params[:id])
-    # @events = @shop.events
     @events = Event.find(params[:id])
     
   end
@@ -17,6 +15,7 @@ class EventsController < ApplicationController
 
   def create
     @event = Event.new(event_params)
+    @shop = Shop.find(params[:id])
     
 
     respond_to do |format|
@@ -46,7 +45,7 @@ class EventsController < ApplicationController
       :end,
       :color,
       :allday,
-      :shop_id
-    )
+      :event_status)
+      .marge(shop_id: @shop.id)
   end
 end
