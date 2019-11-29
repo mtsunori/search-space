@@ -7,10 +7,10 @@
   = f.label :title
   = f.text_field :title, class: 'form-control', placeholder: "ここにタスク名を入力してください"
 
-  = f.label :start_at
+  = f.label :start
   = f.datetime_select :start, ampm: :true, minute_step: 30, class: 'form-control'
 
-  = f.label :finish_at
+  = f.label :end
   = f.datetime_select :end, ampm: :true, minute_step: 30, class: 'form-control'
 
   = f.submit '作成する', class: "btn btn-primary"
