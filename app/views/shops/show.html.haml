@@ -62,7 +62,7 @@
 
       events: { //日ごとの情報をイベントとして取得
     
-      url: '/events.json',
+      url: '/shops/:shop_id/events.json',
       type: 'GET',
       data: {
         id: event_ids,
@@ -72,7 +72,7 @@
 
   .reserve
   -if @shop.user_id == current_user.id
-    =link_to '予約可能日の作成へ', new_event_path(@shop),class: 'reserve__form'
+    =link_to '予約可能日の作成へ', new_shop_event_path(@shop.id),class: 'reserve__form'
   - else
     %span.reserve__explanation ※予約可の表示のある日付のみご利用いただけます。カレンダーから日にちのクリックでご予約画面へお進みください。
   
