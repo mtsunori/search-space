@@ -1,7 +1,7 @@
 %nav.navbar.navbar-light{style: :"background-color: #e3f2fd;" }
   %a.navbar-brand 登録済みタスク一覧
 
-= form_for [@shop, @event] do |f|
+= form_for @event, do |f|
 
 
   = f.label :title
