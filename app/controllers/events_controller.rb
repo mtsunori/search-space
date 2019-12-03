@@ -19,7 +19,7 @@ class EventsController < ApplicationController
 
   def create
     @event = Event.new(event_params)
-    # binding.pry
+    binding.pry
     if @event.save
       # binding.pry
       redirect_to shop_path(@shop.id)
