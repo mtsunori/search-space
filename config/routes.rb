@@ -6,9 +6,9 @@ Rails.application.routes.draw do
 
   root to: 'shops#index'
 
-  resources :shops, only: [:index, :show, :new, :create, :edit, :update] do
-    resources :events
-  end
+  resources :shops, only: [:index, :show, :new, :create, :edit, :update] 
+  resources :events
+  
 
   resources :mypage, only: [:index] do
     member do
