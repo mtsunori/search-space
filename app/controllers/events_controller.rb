@@ -1,5 +1,5 @@
 class EventsController < ApplicationController
-
+  require
   before_action :set_event, only: [:index, :show, :edit, :update, :destroy] 
   before_action :get_shop_info, only: [:show, :new, :create]
   
@@ -24,7 +24,8 @@ class EventsController < ApplicationController
       # binding.pry
       redirect_to shop_path(@shop.id)
     else
-      redirect_to new_shop_event_path(@shop.id)
+      # binding.pry
+      redirect_to new_event_path(@shop.id)
     end
 
   end
@@ -41,13 +42,13 @@ class EventsController < ApplicationController
   def event_params
     params.require(:event).permit(
       :title,
-      :start,
-      :end,
+      # :start,
+      # :end,
       :event_status,
       :shop_id)
       
   end
   def get_shop_info
-    @shop = Shop.find(params[:shop_id])
+    @shop = Shop.find_by(id: params[:format])
   end
 end
