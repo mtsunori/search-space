@@ -1,19 +1,20 @@
 %nav.navbar.navbar-light{style: :"background-color: #e3f2fd;"}
   %a.navbar-brand 予約可能日の作成フォーム
 
-= form_for @event, html: {class: 'form-group'} do |f|
+= form_for [@shop, @event] do |f|
 
-
-  = f.label :title
-  = f.select :title, [["予約可"], ["予約不可"]], class: 'form-control', size: 20, placeholder: "選択してください"
+  -# = f.label :title
+  -# = f.select :title, [["予約可"], ["予約不可"]], class: 'form-control', size: 20, placeholder: "選択してください"
 
   -# = f.label :貸出し開始日時
-  -# = f.datetime_select :start, minute_step: 30, class: 'form-control'
+  -# = f.datetime_select :start_at, minute_step: 30, class: 'form-control'
 
   -# = f.label :貸出し終了日時
-  -# = f.datetime_select :end, minute_step: 30, class: 'form-control'
+  -# = f.datetime_select :end_at, minute_step: 30, class: 'form-control'
 
   =f.hidden_field :shop_id, value: @shop.id
+
+  -# =f.hidden_field :event_status, value: "0"
 
   = f.submit '作成する', class: "btn btn-primary"
 
