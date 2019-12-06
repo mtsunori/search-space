@@ -19,7 +19,7 @@ class EventsController < ApplicationController
 
   def create
     @event = Event.new(event_params)
-    
+
     if @event.save
       redirect_to shop_path(@shop.id)
     else
