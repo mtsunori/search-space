@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 20191028150048) do
     t.string   "title",                    null: false
     t.datetime "start_at",                 null: false
     t.datetime "end_at",                   null: false
-    t.integer  "shop_id",                  null: false
+    t.integer  "shop_id"
     t.integer  "borrower_id"
     t.integer  "event_status", default: 0, null: false
     t.datetime "created_at",               null: false
