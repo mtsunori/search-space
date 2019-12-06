@@ -9,6 +9,7 @@ class ShopsController < ApplicationController
   def show
     @shop = Shop.find(params[:id])
     @events = @shop.events
+    # binding.pry
 
     respond_to do |format|
       format.html # index.html.erb
