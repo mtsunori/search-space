@@ -13,9 +13,14 @@
 ActiveRecord::Schema.define(version: 20191028150048) do
 
   create_table "events", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer  "shop_id",    null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "title",                    null: false
+    t.datetime "start_at",                 null: false
+    t.datetime "end_at",                   null: false
+    t.integer  "shop_id",                  null: false
+    t.integer  "borrower_id"
+    t.integer  "event_status", default: 0, null: false
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
     t.index ["shop_id"], name: "index_events_on_shop_id", using: :btree
   end
 
