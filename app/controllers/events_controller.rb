@@ -14,18 +14,17 @@ class EventsController < ApplicationController
 
   def new
     @event = Event.new
-    # binding.pry
+    
   end
 
   def create
     @event = Event.new(event_params)
-    binding.pry
-    if @event.save
-      # binding.pry
-      redirect_to shop_path(@shop)
+    
+    if @event.save!
+      redirect_to shop_path(@shop.id)
     else
-      # binding.pry
-      redirect_to new_event_path(@shop)
+      redirect_to new_shop_event_path(@shop.id)
+  
     end
 
   end
@@ -41,14 +40,14 @@ class EventsController < ApplicationController
 
   def event_params
     params.require(:event).permit(
-      # :title,
-      # :start_at,
-      # :end_at,
-      # :event_status
+      :title,
+      :start_at,
+      :end_at,
+      :event_status,
       :shop_id
     )
-      
   end
+ 
   def get_shop_info
     @shop = Shop.find_by(id: params[:shop_id])
   end
