@@ -4,12 +4,11 @@ Rails.application.routes.draw do
   devise_for :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
-  root 'shops#index'
+  root to: 'shops#index'
 
-  resources :shops, only: [:index, :show, :new, :create, :edit, :update]
-
-
-  resources :events
+  resources :shops, only: [:index, :show, :new, :create, :edit, :update] do
+    resources :events, only:[:index, :show, :new, :create]
+  end
 
   resources :mypage, only: [:index] do
     member do
@@ -19,3 +18,4 @@ Rails.application.routes.draw do
   end
 
 end
+
