@@ -1,1 +1,11 @@
+.event-wrapper
+  .shop-info
+    .shop-name= @shop.name
+    .shop-image
 
+  %table.event-info
+    %table.event-info__box
+      %tr 貸し出し開始時間
+        %td=@event.start_at
+      %tr 貸し出し終了時間
+        %td=@event.end_at
