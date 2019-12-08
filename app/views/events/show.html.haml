@@ -16,7 +16,7 @@
   -if @event.event_status == 1
     %span.reserve__explanation こちらの日程はご予約が埋まっております。他の日程や施設でご予約をご検討ください。ご利用者様で変更等のご要望の際は直接施設へのご連絡をお願いいたします。
     =link_to '施設情報へ戻る', shop_path(@shop.id), class: 'event-link__btn__gray'
-  -elsif @event.shop_id == @shop.id
+  -elsif @shop.user_id == current_user.id
     =link_to '予約予定を取り消す', shop_event_path, method: :delete, class: 'event-link__btn'
   - else
-    =link_to 'こちらの日程で予約する', edit_shop_event_path(@event), 
+    =link_to 'こちらの日程で予約する', edit_shop_event_path(@event), class: 'event-link__btn'
