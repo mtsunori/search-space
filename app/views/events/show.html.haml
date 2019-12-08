@@ -15,3 +15,5 @@
   .event-link
   -if @event.shop_id == @shop.id
     =link_to '予約予定を取り消す', shop_event_path, method: :delete, class: 'event-link__btn'
+  - else
+    =link_to 'こちらの日程で予約する', edit_shop_event_path(@event), 
