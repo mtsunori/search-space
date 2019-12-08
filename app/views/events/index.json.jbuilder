@@ -6,5 +6,5 @@ json.array!(@events) do |event|
 
 
 
-  json.url shop_event_url(event.id, event.shop_id, format: :html) 
+  json.url shop_event_url(event.shop_id, event.id, format: :html) 
 end

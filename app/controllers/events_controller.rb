@@ -9,7 +9,7 @@ class EventsController < ApplicationController
   end
 
   def show
-
+    
   end
 
   def new
@@ -30,6 +30,22 @@ class EventsController < ApplicationController
   end
 
   def edit
+  end
+
+  def update
+    if @event.update(business_status: 1, borrower_id: current_user.id)
+      flash[:alert] = '予約が確定しました。'
+      redirect_to root_path
+    else
+      flash[:alert] = '予約に失敗しました。'
+      redirect_to controller: "events", action: 'show'
+    end
+
+  end
+
+  def destroy
+    @event.destroy
+    redirect_to root_path
   end
 
 
