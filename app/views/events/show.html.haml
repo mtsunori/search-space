@@ -7,7 +7,7 @@
     %table.event-info__box
       %tr
         %th 貸し出し開始時間
-        %td=@event.start_at
+        %td=@event.start_at.to_s(:start_at)
       %tr
         %th 貸し出し終了時間
-        %td=@event.end_at
+        %td=@event.end_at.to_s(:end_at)
