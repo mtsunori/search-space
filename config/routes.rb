@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   root to: 'shops#index'
 
   resources :shops, only: [:index, :show, :new, :create, :edit, :update] do
-    resources :events, only:[:index, :show, :new, :create]
+    resources :events
   end
 
   resources :mypage, only: [:index] do
