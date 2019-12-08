@@ -7,7 +7,11 @@
     %table.event-info__box
       %tr
         %th 貸し出し開始時間
-        %td=@event.start_at.to_s(:start_at)
+        %td="#{@event.start_at.to_s(:start_at)} - #{@event.end_at.to_s(:end_at)}"
       %tr
-        %th 貸し出し終了時間
-        %td=@event.end_at.to_s(:end_at)
+        %th 貸し出し金額
+        %td= "¥ #{number_with_delimiter(@shop.price)}"
+
+  .event-link
+  -if @event.shop_id == @shop.id
+    =link_to '予約予定を取り消す', shop_event_path, method: :delete, class: 'event-link__btn'
