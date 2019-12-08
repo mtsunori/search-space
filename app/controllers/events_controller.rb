@@ -32,6 +32,11 @@ class EventsController < ApplicationController
   def edit
   end
 
+  def destroy
+    @event.destroy
+    redirect_to root_path
+  end
+
 
   private
   def set_event
