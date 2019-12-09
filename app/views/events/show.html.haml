@@ -19,4 +19,4 @@
   -elsif @shop.user_id == current_user.id
     =link_to '予約予定を取り消す', shop_event_path, method: :delete, class: 'event-link__btn'
   - else
-    =link_to 'こちらの日程で予約する', edit_shop_event_path(@event), class: 'event-link__btn'
+    =link_to 'こちらの日程で予約する', shop_event_path(@shop, @event), method: :patch, class: 'event-link__btn'
