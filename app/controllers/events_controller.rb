@@ -35,6 +35,7 @@ class EventsController < ApplicationController
   def update
     # binding.pry
     if @event.update(update_params)
+      binding.pry
       flash[:alert] = '予約が確定しました。'
       redirect_to root_path
     else
@@ -67,6 +68,9 @@ class EventsController < ApplicationController
   end
   def update_params
     params.require(:event).permit(
+    :title,
+    :borrower_id,
+    :event_status
     )
     
   end

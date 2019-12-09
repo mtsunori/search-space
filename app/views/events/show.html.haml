@@ -19,4 +19,13 @@
   -elsif @shop.user_id == current_user.id
     =link_to '予約予定を取り消す', shop_event_path, method: :delete, class: 'event-link__btn'
   - else
-    =link_to 'こちらの日程で予約する', shop_event_path(@shop, @event), method: :patch, class: 'event-link__btn'
+    -# =link_to 'こちらの日程で予約する', shop_event_path(@shop, @event), method: :patch, class: 'event-link__btn'
+    = form_for [@shop, @event] do |f|
+  
+      = f.hidden_field :title, value: "予約あり", class: 'form-control'
+
+      = f.hidden_field :borrower_id, value: current_user.id, class: 'form-control'
+
+      =f.hidden_field :event_status, value: 1, class: 'form-control'
+
+      = f.submit 'この日程で予約する', class: "btn btn-primary"
