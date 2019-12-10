@@ -13,7 +13,7 @@
         %td= "¥ #{number_with_delimiter(@shop.price)}"
 
   .event-link
-  -if @event.event_status == 1
+  -if @event.event_status == "reserved"
     %span.reserve__explanation こちらの日程はご予約が埋まっております。他の日程や施設でご予約をご検討ください。ご利用者様で変更等のご要望の際は直接施設へのご連絡をお願いいたします。
     =link_to '施設情報へ戻る', shop_path(@shop.id), class: 'event-link__btn__gray'
   -elsif @event.shop_id == @shop.id
