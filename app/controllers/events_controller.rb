@@ -34,12 +34,10 @@ class EventsController < ApplicationController
 
   def update
     # binding.pry
-    if @event.update(update_params)
-      binding.pry
+    if @event.update!(update_params)
       flash[:alert] = '予約が確定しました。'
       redirect_to root_path
     else
-      
       flash[:alert] = '予約に失敗しました。'
       redirect_to controller: "events", action: 'show'
     end
@@ -60,19 +58,21 @@ class EventsController < ApplicationController
   def event_params
     params.require(:event).permit(
       :title,
+      :day_price,
       :start_at,
       :end_at,
       :event_status,
       :shop_id
     )
   end
+
   def update_params
     params.require(:event).permit(
     :title,
-    :borrower_id,
-    :event_status
+    :event_status,
+    :borrower_id
     )
-    
+    # .marge(borrower_id: current_user.id)
   end
  
   def get_shop_info
