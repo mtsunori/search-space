@@ -64,5 +64,10 @@ class ShopsController < ApplicationController
     )
   end
 
+  def set_search
+    @q = Item.ransack(params[:q])
+    @keyword = :name_or_explanation_or_adress_cont
+  end
+
 
 end
