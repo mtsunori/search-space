@@ -10,7 +10,7 @@
         %td="#{@event.start_at.to_s(:start_at)} - #{@event.end_at.to_s(:end_at)}"
       %tr
         %th 貸し出し金額
-        %td= "¥ #{number_with_delimiter(@shop.price)}"
+        %td= "¥ #{number_with_delimiter(@event.day_price)}"
 
   .event-link
   -if @event.event_status == 1
@@ -26,6 +26,6 @@
 
       = f.hidden_field :borrower_id, value: current_user.id, class: 'form-control'
 
-      =f.hidden_field :event_status, value: 1, class: 'form-control'
+      =f.hidden_field :event_status, value: "resereved", class: 'form-control'
 
       = f.submit 'この日程で予約する', class: "btn btn-primary"
