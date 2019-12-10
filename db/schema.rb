@@ -14,6 +14,7 @@ ActiveRecord::Schema.define(version: 20191028150048) do
 
   create_table "events", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "title",                    null: false
+    t.integer  "day_price",                null: false
     t.datetime "start_at",                 null: false
     t.datetime "end_at",                   null: false
     t.integer  "shop_id"
@@ -21,6 +22,7 @@ ActiveRecord::Schema.define(version: 20191028150048) do
     t.integer  "event_status", default: 0, null: false
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
+    t.index ["borrower_id"], name: "index_events_on_borrower_id", using: :btree
     t.index ["shop_id"], name: "index_events_on_shop_id", using: :btree
   end
 
@@ -69,6 +71,7 @@ ActiveRecord::Schema.define(version: 20191028150048) do
   end
 
   add_foreign_key "events", "shops"
+  add_foreign_key "events", "users", column: "borrower_id"
   add_foreign_key "images", "shops"
   add_foreign_key "shops", "users"
 end

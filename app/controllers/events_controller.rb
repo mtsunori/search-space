@@ -1,7 +1,7 @@
 class EventsController < ApplicationController
 
   before_action :set_event, only: [:index, :show, :edit, :update, :destroy] 
-  before_action :get_shop_info, only: [:show, :new, :create]
+  before_action :get_shop_info, only: [:show, :new, :create, :update]
   
   def index
     @events = Event.find(params[:id])
@@ -33,7 +33,8 @@ class EventsController < ApplicationController
   end
 
   def update
-    if @event.update(business_status: 1, borrower_id: current_user.id)
+    # binding.pry
+    if @event.update!(update_params)
       flash[:alert] = '予約が確定しました。'
       redirect_to root_path
     else
@@ -57,11 +58,21 @@ class EventsController < ApplicationController
   def event_params
     params.require(:event).permit(
       :title,
+      :day_price,
       :start_at,
       :end_at,
       :event_status,
       :shop_id
     )
+  end
+
+  def update_params
+    params.require(:event).permit(
+    :title,
+    :event_status,
+    :borrower_id
+    )
+    # .marge(borrower_id: current_user.id)
   end
  
   def get_shop_info
