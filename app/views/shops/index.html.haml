@@ -1,17 +1,40 @@
 .shop_main
   .header
-    %h1.header__title S
-    -# =link_to root_path, class:'title', method: :get do
+    .header__box
+      =link_to root_path, class:'title', method: :get do
+        %h1.header__box__title S
+    
+    .header-box__left
+      = search_form_for @q, url: search_shops_path, class: 'shop_search' do |f|
+        .search_field
+          = f.text_field @keyword, class: 'form_search', placeholder: '店舗名・キーワードなどで探せます'
+          %label.search-label{for: "search-icon"}
+            %i.fa.fa-search
+            = f.submit '', id: "search-icon"
+
+      -# .header-link
+      -#   %ul.header-link__nav
+      -#   - if user_signed_in?
+      -#     %li
+      -#       = link_to 'マイページ', user_path(current_user.id), class: 'link-btn'
+
+      -#     %li
+      -#       = link_to 'ログアウト', destroy_user_session_path, class: 'link-btn'
+
+      -#   - else
+      -#     %li
+          
+
 
   .main
     .pickup
-      .pickup__title　おすすめ店舗
+      .pickup__title おすすめ店舗
       .pickup__image
         =render partial: "shared/shop-box"
     .pickup
-      .pickup__title　新着店舗
+      .pickup__title 新着店舗
       .pickup__image
         =render partial: "shared/shop-box"
   .footer
     .footer__content
-      =link_to '---search-space---', 'root_path'
+      =link_to '---search-space---', 'root_path', class: 'footer-link'
