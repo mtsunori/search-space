@@ -12,7 +12,7 @@ class ApplicationController < ActionController::Base
   private
 
   def set_search
-    @q = Item.ransack(params[:q])
-    @keyword = :name_or_explanation_or_adress_cont
+    @q = Shop.ransack(params[:q])
+    @keyword = :name_or_explanation_or_address_cont
   end
 end
