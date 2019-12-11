@@ -7,15 +7,14 @@ Rails.application.routes.draw do
   root to: 'shops#index'
 
   resources :shops, only: [:index, :show, :new, :create, :edit, :update] do
+    collection do
+      match 'search', to: 'shop#search', via: [:get, :post]
+    end
     resources :events
   end
 
-  resources :mypage, only: [:index] do
-    member do
-    get :logout
-    end
-  resources :users, only: [:edit, :update]
-  end
+  resources :users, only: [:edit, :update, :show]
+
 
 end
 
