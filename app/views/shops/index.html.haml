@@ -14,14 +14,14 @@
 
       .header-link
         %ul.header-link__nav
-        - if user_signed_in?
-          %li
-            = link_to 'マイページ', user_path(current_user.id), class: 'link-btn'
+          - if user_signed_in?
+            %li
+              = link_to 'マイページ', user_path(current_user.id), class: 'link-btn'
 
-          %li
-            = link_to 'ログアウト', destroy_user_session_path, class: 'link-btn'
+            %li
+              = link_to 'ログアウト', destroy_user_session_path, class: 'link-btn'
 
-        - else
+          - else
           %li
           
 
