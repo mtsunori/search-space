@@ -97,10 +97,20 @@
         }
       }
       .header-link{
-        
+        &__nav{
+          margin: 8px 0 0;
+          height: 30%;
+          ul.nav li {
+            display: inline-block;
+            width: 40px;
+            height: 44px;
+            // position: relative;
+            margin-right: 10px;
+
+        }    
+       }
       }
     }
-  
   }
 
   .main{
