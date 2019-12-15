@@ -9,6 +9,10 @@
       height: 200px;
       width: 40%;
       display: inline-block;
+      .title{
+        text-decoration: none;
+      }
+
       &__title{
         height: 150px;
         width: 150px;
@@ -24,6 +28,7 @@
         border-radius: 50%;
         background-color: $headerblue;
         overflow: hidden;
+
         &::before{
           display:block;
           content:"";
@@ -93,22 +98,17 @@
         }
       }
       .header-link{
-        // margin: 8px 0 0;
         height: 50%;
-        
+
         &__mypage{
-          // height: 40px;
-          // width: 100px;
           height: 80px;
           width: 80px;
           display: inline-block;
-          margin: 0 20px 10px 200px;
+          margin: 0 20px 10px 60%;
           border: 1px solid black;
-          // border-radius: 5px;
           border-radius: 50%;
           background-color:#3333CC;
-          
-          
+
           a{
             text-decoration: none;
             margin: 30px auto 0;
@@ -116,15 +116,30 @@
             width: 70px;
             color: #f5f5f5;
             font-size: 14px;
-            
+            font-weight: bold;
+
           }
         }
         &__logout{
+          height: 80px;
+          width: 80px;
           display: inline-block;
-          padding: 10px 0 10px 70px;
+          margin: 0 20px 10px 50px;
+          border: 1px solid red;
+          border-radius: 50%;
+          background-color: #fff;
+          
+          
+          a{
+            text-decoration: none;
+            margin: 30px auto 0;
+            display: block;
+            width: 70px;
+            color: red;
+            font-size: 14px;
+            // font-weight: bold;
+          }
         }
-
-              
       }
     }
   }
