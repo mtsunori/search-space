@@ -1,17 +1,14 @@
 .shop_main
-  .header
-    %h1.header__title S
-    -# =link_to root_path, class:'title', method: :get do
-
+ 
   .main
     .pickup
-      .pickup__title　おすすめ店舗
+      .pickup__title おすすめ店舗
       .pickup__image
         =render partial: "shared/shop-box"
     .pickup
-      .pickup__title　新着店舗
+      .pickup__title 新着店舗
       .pickup__image
         =render partial: "shared/shop-box"
   .footer
     .footer__content
-      =link_to '---search-space---', 'root_path'
+      =link_to '---search-space---', 'root_path', class: 'footer-link'

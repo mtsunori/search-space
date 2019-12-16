@@ -61,3 +61,6 @@ gem 'therubyracer'
 gem 'kaminari', '~> 0.17.0'
 gem 'enum_help'
 gem 'pry-rails'
+
+# 検索関連
+gem 'ransack'
