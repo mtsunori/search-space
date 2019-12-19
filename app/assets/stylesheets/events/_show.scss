@@ -65,12 +65,9 @@
       background-color:red;
       text-decoration: none;
     }
-    #edit_event{
+    .edit-form{
       height: 50px;
-      width: 70px;
-      margin: 0 auto;
-      .btn-primary{
-
+      .red-btn{
         margin: 16px auto;
         width: 70%;
         height: 60px;
@@ -83,7 +80,6 @@
         background-color:red;
         text-decoration: none;
       }
-    }
-      
-    }
+    } 
   }
+}
