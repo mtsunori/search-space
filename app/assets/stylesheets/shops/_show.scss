@@ -46,22 +46,6 @@
         }
       }
 
-      // .triangle_box { //SOLDの三角形
-      //   position: absolute;
-      //   top: 0;
-      //   left: 0;
-
-      //   &__sold_triangle {
-      //     @include triangle;
-      //     border-width: 120px 120px 0 0;
-  
-      //     &__text {
-      //       top: 24px;
-      //       font-size: 28px;
-      //       @include triangle_text;
-      //     }
-      //   }
-      // }
 
       &__image--small {
         display: flex;
@@ -128,24 +112,6 @@
                 display: flex;
                 justify-content: space-between;
 
-                // &__image {
-                //   color: #fba933;
-                //   font-size: 16px;
-                //   line-height: 1;
-                //   vertical-align: middle;
-                //   font-weight: bold;
-                //   display: inline-block;
-
-                //   &:first-of-type {
-                //     color: #ef5185;
-                //     display: inline-block;
-                //   }
-
-                //   &:last-of-type {
-                //     color: #6ab5d8;
-                //     display: inline-block;
-                //   }
-                // }
 
                 &__number {
                   margin: 0 16px 0 4px;
