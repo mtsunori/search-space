@@ -1,9 +1,9 @@
 .event-wrapper
   .shop-info
-    .shop-name= @shop.name
+    %h1.shop-name= @shop.name
     .shop-image
 
-  %table.event-info
+  .event-info
     %table.event-info__box
       %tr
         %th 貸し出し開始時間
@@ -13,19 +13,20 @@
         %td= "¥ #{number_with_delimiter(@event.day_price)}"
 
   .event-link
-  -if @event.event_status == "reserved"
-    %span.reserve__explanation こちらの日程はご予約が埋まっております。他の日程や施設でご予約をご検討ください。ご利用者様で変更等のご要望の際は直接施設へのご連絡をお願いいたします。
-    =link_to '施設情報へ戻る', shop_path(@shop.id), class: 'event-link__btn__gray'
-  -elsif @shop.user_id == current_user.id
-    =link_to '予約予定を取り消す', shop_event_path, method: :delete, class: 'event-link__btn'
-  - else
-    -# =link_to 'こちらの日程で予約する', shop_event_path(@shop, @event), method: :patch, class: 'event-link__btn'
-    = form_for [@shop, @event] do |f|
-  
-      = f.hidden_field :title, value: "予約あり", class: 'form-control'
+    -if @event.event_status == "reserved"
+      %span.reserve__explanation こちらの日程はご予約が埋まっております。他の日程や施設でご予約をご検討ください。ご利用者様で変更等のご要望の際は直接施設へのご連絡をお願いいたします。
+      =link_to '施設情報へ戻る', shop_path(@shop.id), class: 'event-link__btn__gray'
+    -elsif @shop.user_id == current_user.id
+      =link_to '予約予定を取り消す', shop_event_path, method: :delete, class: 'event-link__btn'
+    - else
+      .edit-form
 
-      = f.hidden_field :borrower_id, value: current_user.id, class: 'form-control'
+        = form_for [@shop, @event] do |f|
+      
+          = f.hidden_field :title, value: "予約あり", class: 'form-control'
 
-      =f.hidden_field :event_status, value: "resereved", class: 'form-control'
+          = f.hidden_field :borrower_id, value: current_user.id, class: 'form-control'
 
-      = f.submit 'この日程で予約する', class: "btn btn-primary"
+          =f.hidden_field :event_status, value: "resereved", class: 'form-control'
+
+          = f.submit 'この日程で予約する', class: "red-btn"
