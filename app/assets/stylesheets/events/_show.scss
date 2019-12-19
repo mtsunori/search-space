@@ -50,6 +50,7 @@
         font-weight: bold;
         text-decoration: none;
         background-color:#666699;
+        
       }
     &__btn{
 
@@ -64,6 +65,8 @@
       font-weight: bold;
       background-color:red;
       text-decoration: none;
+     
+
     }
     .edit-form{
       height: 50px;
@@ -79,7 +82,8 @@
         font-weight: bold;
         background-color:red;
         text-decoration: none;
+        cursor: pointer;
       }
-    } 
+    }
   }
 }
