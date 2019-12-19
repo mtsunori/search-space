@@ -33,7 +33,7 @@
             %td= "#{@shop.lending_time_start} - #{@shop.lending_time_end}"
           %tr
             %th 貸し出し金額
-            %td=  "¥ #{number_with_delimiter(@shop.price)}"
+            %td=  "¥ #{number_with_delimiter(@shop.price)}〜"
           %tr
             %th 店舗営業時間
             %td= "#{@shop.business_hour_start} - #{@shop.business_hour_end}"
@@ -44,6 +44,7 @@
           %tr
             %th 店舗説明
             %td= @shop.explanation
+    .notice ※ 貸し出し時間と金額は日により、変動があります。詳細画面からご確認の上、ご利用いただきますようお願いいたします。
 
   #calendar
   :javascript

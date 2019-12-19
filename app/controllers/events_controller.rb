@@ -35,7 +35,7 @@ class EventsController < ApplicationController
   def update
     # binding.pry
     if @event.update!(update_params)
-      flash[:alert] = '予約が確定しました。'
+      flash[:notice] = '予約が確定しました。'
       redirect_to root_path
     else
       flash[:alert] = '予約に失敗しました。'
