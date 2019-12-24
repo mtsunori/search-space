@@ -37,24 +37,6 @@ fullcalendarの機能ももっと追加したいと思います。
 - has_one :shop, dependent: :destroy
 - has_many :events
 
-## cardsテーブル
-|Column|Type|Options|
-|------|----|-------|
-|customer_id|string|null: false|
-|card_id|integer|null: false|
-|user_id|integer|null: false|
-### Association
-- belongs_to :user
-
-<!-- Facebook等のSNS認証用 -->
-## sns_credentialsテーブル
-|Column|Type|Options|
-|------|----|-------|
-|user_id|references|null: false, foreign_key: true|
-|uid|string||
-|provider|string||
-### Association
-- belongs_to :user
 
 ## shopsテーブル
 |Column|Type|Options|
