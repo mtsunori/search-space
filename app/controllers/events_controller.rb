@@ -9,6 +9,7 @@ class EventsController < ApplicationController
   end
 
   def show
+    @images = @shop.images
     
   end
 

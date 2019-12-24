@@ -2,6 +2,7 @@
   .shop-info
     %h1.shop-name= @shop.name
     .shop-image
+      = image_tag "#{@images.first.image}", alt: '商品画像', height: '210', width: '200'
 
   .event-info
     %table.event-info__box
