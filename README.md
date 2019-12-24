@@ -6,6 +6,6 @@
 
 ## 仕様説明
 ### トップページ
-![TOP](/img/top.png)
+![TOP](app/assets/images/top.png)
 
 
