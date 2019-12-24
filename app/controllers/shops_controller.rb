@@ -9,6 +9,7 @@ require "shop.rb"
   def show
     @shop = Shop.find(params[:id])
     @events = @shop.events
+    @images = @shop.images
     # binding.pry
 
     respond_to do |format|
