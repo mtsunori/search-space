@@ -14,24 +14,27 @@
   .shop{
 
     &__detail{
-      height: 188px;
-      width: 185px;
+
       position: relative;
       align-items: center;
 
       &__image{
+        img{
         background-repeat: no-repeat;
         background-size: cover;
         text-align: center;
-        height: 188px;
-        width: 185px;
+        height: 400px;
+        width: 400px;
         object-fit: cover;
+        border-radius: 50%;
+        }
       }
 
-      &__price{
+      &__info{
+        width: 100%;
         align-items: center;
         background: rgba(0,0,0,.4);
-        border-radius: 0 14px 14px 0;
+        border-radius:  14px;
         bottom: 8px;
         color: #fff;
         display: inline-flex;
@@ -43,39 +46,33 @@
         position: absolute;
         z-index: 2;
         color: #fff;
-      }
-    }
-    &__explanation{
-      max-height: 70px;
-      min-height: 70px;
-      width: 185px;
-      background-color: #fff;
-      word-break: break-all;
-      padding: 10px 10px 7px;
-      overflow: hidden;
-      white-space: normal;
-      color: black;
-      font-size: 16px;
-      font-weight: 100;
-      position: relative;
+          &__price{
+            display: inline-block;
 
-      span{
-      display: inline-block;
-      vertical-align: baseline;
-      }
+            span{
+            display: inline-block;
+            vertical-align: baseline;
+            }
+          }
+        
+      
+          &__address{
+            word-break: break-all;
+            padding: 10px 10px 7px 50px;
+            overflow: hidden;
+            white-space: normal;
+            color: #fff;
+            font-size: 16px;
+            font-weight: 100;
+            text-align: right;
+            
+          
 
-      &__review{
-        background-color: #fff;
-        height: 15px;
-        width:50px;
-        position: absolute;
-        bottom: 0;
-        right: 10px;
-        display: flex;
-        justify-content: space-between;
-        z-index: 3;
-        font-size: 14px;
-
+            span{
+            display: inline-block;
+            vertical-align: baseline;
+            }
+          }
       }
     }
   }

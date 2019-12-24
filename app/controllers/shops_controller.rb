@@ -1,9 +1,9 @@
 class ShopsController < ApplicationController
 
- 
+require "shop.rb"
 
   def index
-    # @new_shop = Shop.where(params[:id]).order{"created_st_DESC"}.limit(3)
+    @new_shop =Shop.incl.created_desc.limit(3)
   end
 
   def show

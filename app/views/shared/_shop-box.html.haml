@@ -1,12 +1,13 @@
-- 3.times do
-  .box
-    .shop
-    -# =link_to shop_path(shop.id), method: :get do
-      .shop__detail
-        .shop__detail__image
-          -# = image_tag "#{shop.images.first.image}", alt: '商品画像', height:'188', width:'185'
-        .shop__detail__price
-          %span= "¥ "
-      .shop__explanation
-        %span= "shop.name"
-        .shop__explanation__review
+
+.box
+  .shop
+  =link_to shop_path(shop.id), method: :get do
+    .shop__detail
+      .shop__detail__image
+        = image_tag "#{shop.images.first.image}", alt: '商品画像', height:'400', width:'400'
+      .shop__detail__info
+        .shop__detail__info__price
+          %span= "¥#{shop.price}〜 "
+        .shop__detail__info__address
+          %span= "#{shop.address}#{shop.house_number}"
+      

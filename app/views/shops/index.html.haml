@@ -4,11 +4,13 @@
     .pickup
       .pickup__title おすすめ店舗
       .pickup__image
-        =render partial: "shared/shop-box"
+        - @new_shop.each do |shop|
+          =render partial: "shared/shop-box",locals: {shop: shop}
     .pickup
       .pickup__title 新着店舗
       .pickup__image
-        =render partial: "shared/shop-box"
+        - @new_shop.each do |shop|
+          =render partial: "shared/shop-box",locals: {shop: shop}
   .footer
     .footer__content
       =link_to '---search-space---', 'root_path', class: 'footer-link'
