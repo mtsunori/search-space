@@ -21,6 +21,87 @@
 
 ![予約確定画面](app/assets/images/event_edit.png)
 
+## 今後
+コメント機能の追加や、店舗の宣伝となるようにメニューのページなどを追加したいと思っています。
+fullcalendarの機能ももっと追加したいと思います。
+
+# search-space DB設計
+## usersテーブル
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false|
+|email|string|null: false, unique: true|
+|password|string|null: false|
+
+### Association
+- has_one :shop, dependent: :destroy
+- has_many :events
+
+## cardsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|customer_id|string|null: false|
+|card_id|integer|null: false|
+|user_id|integer|null: false|
+### Association
+- belongs_to :user
+
+<!-- Facebook等のSNS認証用 -->
+## sns_credentialsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|user_id|references|null: false, foreign_key: true|
+|uid|string||
+|provider|string||
+### Association
+- belongs_to :user
+
+## shopsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false, index: true|
+|price|integer|null: false, index: true|<!-- 貸し出し目安金額 -->
+|explanation|text|null: false| <!-- 店舗設備等の説明 -->
+|user_id|references|null: false, foreign_key: true|
+|capacity|integer|null: false| <!-- 店舗の席数 -->
+|address|text|null: false| <!-- 住所 -->
+|house_number|string|null: false| <!-- 番地 -->
+|building_name|string|<!-- 建物名 -->
+|room_number|string| <!-- 部屋番号 -->
+|lending_time_start|string|null: false| <!-- 貸し出し開始時間 -->
+|lending_time_end|string|null: false| <!-- 貸し出し終了時間 -->
+|business_hour_start|string|null: false| <!-- 営業開始時間 -->
+|business_hour_end|string|null: false| <!-- 営業終了時間 -->
+|phone_number|string|null: false| <!-- 電話番号 -->
+
+### Association
+- belongs_to :user
+- has_many :images dependent: :destroy
+- has_many :events
+
+## imagesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|image|text|null: false|
+|shop_id|references|null: false, foreign_key: true|
+### Association
+- belongs_to: shop
+
+## eventsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|title|string|null: false|
+|day_price|integer|null: false|<!-- イベントごとの値段 -->
+|start_at|datetime|null: false|<!-- イベントごとの開始時間 -->
+|end_at|datetime|null: false|<!-- イベントごとの終了時間 -->
+|shop_id|references|foreign_key: true|
+|borrower_id|references|foreign_key: {to_table: :users}|<!-- 借り手側id -->
+|event_status|integer|null: false, default: 0|<!-- 予約の状態 -->
+### Association
+- belongs_to :user
+- belongs_to :shop
+
+
 
 
 
