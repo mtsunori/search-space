@@ -7,6 +7,6 @@
 
 ## 仕様説明
 ### トップページ
-![TOP](/images/https://gyazo.com/dfc7545a877767ab67b449ae39ad44df)
+![TOP](/img/https://gyazo.com/dfc7545a877767ab67b449ae39ad44df)
 
 
