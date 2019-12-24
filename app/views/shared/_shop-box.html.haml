@@ -4,7 +4,7 @@
   =link_to shop_path(shop.id), method: :get do
     .shop__detail
       .shop__detail__image
-        = image_tag "#{shop.images.first.image}", alt: '商品画像', height:'188', width:'185'
+        = image_tag "#{shop.images.first.image}", alt: '商品画像', height:'400', width:'400'
       .shop__detail__info
         .shop__detail__info__price
           %span= "¥#{shop.price}〜 "
