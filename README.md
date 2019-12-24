@@ -6,6 +6,6 @@
 
 ## 仕様説明
 ### トップページ
-![TOP](/images/top.png)
+![TOP](/img/top.png)
 
 
