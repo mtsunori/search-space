@@ -58,7 +58,7 @@ gem 'font-awesome-rails'
 gem 'momentjs-rails', '>= 2.9.0'
 gem 'fullcalendar-rails'
 gem 'therubyracer'
-gem 'kaminari', '~> 0.17.0'
+gem 'kaminari', '~> 1.2.1'
 gem 'enum_help'
 gem 'pry-rails'
 
